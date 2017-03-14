@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         TelephonyManager telManager=(TelephonyManager)
                 getSystemService(Context.TELEPHONY_SERVICE);
         telManager.listen(phoneStateListener,
-                PhoneStateListener.LISTEN_CALL_STATE|
-                        PhoneStateListener.LISTEN_SERVICE_STATE|
-                        PhoneStateListener.LISTEN_SIGNAL_STRENGTH|
+//                PhoneStateListener.LISTEN_CALL_STATE|
+//                        PhoneStateListener.LISTEN_SERVICE_STATE|
+//                        PhoneStateListener.LISTEN_SIGNAL_STRENGTH|
                         PhoneStateListener.LISTEN_CELL_LOCATION);
     }
 
@@ -72,15 +72,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
+/*
         //電話情報の受信停止
         TelephonyManager telManager=(TelephonyManager)
                 getSystemService(Context.TELEPHONY_SERVICE);
         telManager.listen(phoneStateListener,PhoneStateListener.LISTEN_NONE);
+*/
     }
 
     //電話情報を受信するためのリスナー
     public PhoneStateListener phoneStateListener=new PhoneStateListener() {
-        //電話コール状態の変化時に呼ばれる
+        /*//電話コール状態の変化時に呼ばれる
         @Override
         public void onCallStateChanged(int state, String number) {
             String str="電話コール状態:";
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             String str="通信強度:"+String.valueOf(-113+2*asu)+"dBm";
             textView.setText(textView.getText()+"\n"+str);
         }
-
+*/
         //基地局の変化時に呼ばれる
         @Override
         public void onCellLocationChanged(CellLocation location) {
