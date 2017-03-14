@@ -72,12 +72,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-/*
         //電話情報の受信停止
         TelephonyManager telManager=(TelephonyManager)
                 getSystemService(Context.TELEPHONY_SERVICE);
         telManager.listen(phoneStateListener,PhoneStateListener.LISTEN_NONE);
-*/
     }
 
     //電話情報を受信するためのリスナー
